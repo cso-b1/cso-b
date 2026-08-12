@@ -5,103 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تصريح جاهز للتنزيل</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f6f9;
-            margin: 0;
-            padding: 20px;
+            background: radial-gradient(circle at center, #111a28 0%, #080d14 100%);
+            color: #ffffff;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            padding: 20px;
         }
         .container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            padding: 30px;
-            max-width: 400px;
+            background-color: #111923;
+            border: 1px solid #1c2738;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            padding: 32px 24px;
+            max-width: 480px;
             width: 100%;
             text-align: center;
         }
-        .logo img {
-            max-width: 120px;
+        .logo-container {
+            display: flex;
+            justify-content: center;
             margin-bottom: 20px;
         }
+        .logo-container img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            background-color: #ffffff;
+            padding: 4px;
+        }
         h1 {
-            color: #2c3e50;
+            color: #ffffff;
             font-size: 22px;
+            font-weight: bold;
             margin-bottom: 10px;
         }
         .description {
-            color: #7f8c8d;
-            font-size: 14px;
+            color: #8b9bb4;
+            font-size: 13px;
             margin-bottom: 25px;
+            line-height: 1.6;
         }
-        .info-table {
-            border: 1px solid #eceff1;
-            border-radius: 8px;
-            margin-bottom: 25px;
-            overflow: hidden;
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 10px;
         }
-        .info-row {
+        .info-grid-bottom {
             display: flex;
-            justify-content: space-between;
-            padding: 12px 15px;
-            border-bottom: 1px solid #eceff1;
-            font-size: 14px;
+            justify-content: flex-start;
+            margin-bottom: 25px;
         }
-        .info-row:last-child { border-bottom: none; }
-        .info-label { color: #7f8c8d; font-weight: bold; }
-        .info-value { color: #2c3e50; }
+        .info-box {
+            background-color: #172230;
+            border: 1px solid #202d3e;
+            border-radius: 8px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        .info-box-half {
+            width: 32.33%;
+            background-color: #172230;
+            border: 1px solid #202d3e;
+            border-radius: 8px;
+            padding: 12px 8px;
+            text-align: center;
+        }
+        .info-label {
+            color: #6c7d93;
+            font-size: 11px;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .info-value {
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: bold;
+            word-break: break-word;
+        }
         .download-btn {
             display: block;
-            background-color: #007bff;
-            color: white;
+            background: linear-gradient(90deg, #00b4d8 0%, #17a2b8 50%, #0077b6 100%);
+            color: #080d14;
             text-decoration: none;
             padding: 14px;
             border-radius: 8px;
+            font-size: 15px;
             font-weight: bold;
-            transition: background 0.3s;
-            margin-bottom: 10px;
+            transition: opacity 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+            margin-bottom: 12px;
         }
-        .download-btn:hover { background-color: #0056b3; }
-        .footer-text { color: #b2bec3; font-size: 12px; }
+        .download-btn:hover {
+            opacity: 0.9;
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.5);
+        }
+        .footer-text {
+            color: #58687e;
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
     <!-- الشعار -->
-    <div class="logo">
+    <div class="logo-container">
         <img src="logo.png" alt="Logo">
     </div>
 
     <h1>تصريح جاهز للتنزيل</h1>
-    <p class="description">استخدم الزر أدناه لتنزيل نسخة PDF الرسمية للتصريح.</p>
+    <p class="description">استخدم الزر أدناه لتنزيل نسخة PDF الرسمية للتصريح. يمكنك مشاركتها مع الجهات المعنية للتحقق.</p>
 
-    <!-- جدول البيانات -->
-    <div class="info-table">
-        <div class="info-row">
-            <div class="info-label">رقم التصريح</div>
-            <div class="info-value">11324</div>
+    <!-- شبكة البيانات العلوية (3 خانات) -->
+    <div class="info-grid">
+        <div class="info-box">
+            <span class="info-label">رقم التصريح</span>
+            <span class="info-value">11324</span>
         </div>
-        <div class="info-row">
-            <div class="info-label">الشركة</div>
-            <div class="info-value"> مرود الخليج</div>
+        <div class="info-box">
+            <span class="info-label">الشركة</span>
+            <span class="info-value">مرود الخليج</span>
         </div>
-        <div class="info-row">
-            <div class="info-label">تاريخ الإصدار</div>
-            <div class="info-value">2026-06-16</div>
+        <div class="info-box">
+            <span class="info-label">تاريخ الإصدار</span>
+            <span class="info-value">2026-06-16</span>
         </div>
     </div>
 
-    <!-- زر التحميل (ضع رابط ملف الـ PDF المرفوع سحابياً في خانة href) -->
+    <!-- شبكة البيانات السفلية (تاريخ الانتهاء) -->
+    <div class="info-grid-bottom">
+        <div class="info-box-half">
+            <span class="info-label">تاريخ الانتهاء</span>
+            <span class="info-value">30/12/2026</span>
+        </div>
+    </div>
+
+    <!-- زر التحميل المتدرج -->
     <a href="my-permit.pdf" class="download-btn" target="_blank">
-    اضغط لتنزيل التصريح (PDF)
-</a>
+        اضغط لتنزيل التصريح (PDF)
+    </a>
     
-    <div class="footer-text">سيبدأ التنزيل مباشرة</div>
+    <div class="footer-text">سيبدأ التنزيل مباشرة. إذا لم يبدأ، اضغط الزر مرة أخرى.</div>
 </div>
 
 </body>
