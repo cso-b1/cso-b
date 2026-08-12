@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصريح جاهز للتنزيل</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+        .logo img {
+            max-width: 120px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        .description {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+        .info-table {
+            border: 1px solid #eceff1;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eceff1;
+            font-size: 14px;
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-label { color: #7f8c8d; font-weight: bold; }
+        .info-value { color: #2c3e50; }
+        .download-btn {
+            display: block;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: background 0.3s;
+            margin-bottom: 10px;
+        }
+        .download-btn:hover { background-color: #0056b3; }
+        .footer-text { color: #b2bec3; font-size: 12px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- الشعار -->
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+
+    <h1>تصريح جاهز للتنزيل</h1>
+    <p class="description">استخدم الزر أدناه لتنزيل نسخة PDF الرسمية للتصريح.</p>
+
+    <!-- جدول البيانات -->
+    <div class="info-table">
+        <div class="info-row">
+            <div class="info-label">رقم التصريح</div>
+            <div class="info-value">11324</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">الشركة</div>
+            <div class="info-value"> مرود الخليج</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">تاريخ الإصدار</div>
+            <div class="info-value">2026-06-16</div>
+        </div>
+    </div>
+
+    <!-- زر التحميل (ضع رابط ملف الـ PDF المرفوع سحابياً في خانة href) -->
+    <a href="my-permit.pdf" class="download-btn" target="_blank">
+    اضغط لتنزيل التصريح (PDF)
+</a>
+    
+    <div class="footer-text">سيبدأ التنزيل مباشرة</div>
+</div>
+
+</body>
+</html>
